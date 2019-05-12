@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import CharacterList from './components/character/characterList';
+import NavBar from './components/nav/navBar';
+import {Route} from 'react-router-dom';
+import Character from './components/character/character';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    data: null, 
+    characterDataLink: ''
+  }
+
+  componentDidMount() {
+    axios.get('https://rickandmortyapi.com/api')
+      .then(res => this.setState({ data: res.data }))
+      .then((res) => this.setState({...this.state, characterDataLink: this.state.data.characters}))
+      .catch(err => console.log(err))
+  }
+
+  nextPage = (link) => {
+    this.setState({
+      ...this.state,
+      characterDataLink: link
+    })
+  }
+
+  render() {
+    console.log(this.state.characterDataLink)
+    if (!this.state.data) {
+      return "Loading..."
+    } else {
+      return (
+        <main>
+          <NavBar />
+          <Route exact path="/characters/" render={props => <CharacterList {...props} nextPage={this.nextPage} characters={this.state.characterDataLink} /> }/>
+          <Route path="/characters/:id" render={props => <Character {...props}/>} />
+          </main>
+        )
+    }
+  }
 }
 
 export default App;
