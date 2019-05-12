@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import {List, Card } from '../styledComponents/styledComponents';
 
 class Character extends React.Component {
@@ -15,6 +14,7 @@ class Character extends React.Component {
             .catch(err => console.log(err))
     }
 
+    
 
     render() {
         if (!this.state.char) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import LocationCard from './locationCard';
-import {List} from '../styledComponents/styledComponents';
+import { LocList, LocListCont } from '../styledComponents/styledComponents';
 
 class LocationList extends React.Component {
 
@@ -22,9 +22,11 @@ class LocationList extends React.Component {
             return 'loading...'
         } else {
             return (
-                <List>
-                    {this.state.locations.map(loc => <LocationCard key={loc.id}location={loc}/>)}
-                </List>
+                <LocList>
+                    <LocListCont style={{display: 'flex', flexFlow: 'row wrap'}}>
+                        {this.state.locations.map(loc => <LocationCard key={loc.id} location={loc} />)}
+                    </LocListCont>
+                </LocList>
             )
         }
 

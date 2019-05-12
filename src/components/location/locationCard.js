@@ -1,18 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {LocCard} from '../styledComponents/styledComponents';
 
 class LocationCard extends React.Component{
-    state={
-
-    }
 
 
     render(){
         const {id, name} = this.props.location
         return(
-            <div>
+            <LocCard>
                 <Link to={`/locations/${id}`}>{name}</Link>
-            </div>
+            </LocCard>
         )
     }
 }
