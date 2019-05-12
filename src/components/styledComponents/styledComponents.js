@@ -29,15 +29,18 @@ border-radius: 4px;
 `
 
 export const LocCard = styled.div`
-text-decoration: none;
-color: black;
 border: 1px solid #c1c1c1;
 border-radius: 4px;
 background-color: white;
 padding: 2px;
-font-weight: lighter;
-font-size: small;
 margin: 2px;
+
+a{
+    color: black;
+    font-weight: lighter;
+    font-size: small;
+    text-decoration: none;
+}
 `
 
 export const LocList = styled.div`
@@ -51,4 +54,36 @@ display: flex;
 flexFlow: row wrap;
 justify-content: center;
 `
+export const LocCharCont = styled.div`
+margin: 5px 0;
+
+a{
+    color: black;
+    text-decoration: none;
+    font-weight: light;
+    text-align: left;
+
+    :hover {
+        text-decoration: underline;
+    }
+}
+
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default List;

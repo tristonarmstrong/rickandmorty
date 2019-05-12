@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import {Card} from '../styledComponents/styledComponents';
+import LocCharList from './locCharList';
 
 class Location extends React.Component{
     state={
@@ -24,11 +26,17 @@ class Location extends React.Component{
         }
         const {name, dimension, type} = this.state.loc
         return(
-            <div>
+            <Card>
                 <h1>{name}</h1>
-                <p>{dimension}</p>
-                <p>{type}</p>
-            </div>
+                <p><strong>Dimension: </strong>{dimension}</p>
+                <p><strong>Type: </strong>{type}</p>
+                <ul>
+                    <p><strong>Residents:</strong> ({this.state.loc.residents.length})</p>
+                    {this.state.loc.residents.map(person => {
+                        return <LocCharList person={person}/>
+                    })}
+                </ul>
+            </Card>
         )
     }
 }
