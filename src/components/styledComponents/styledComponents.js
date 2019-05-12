@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const CharList = styled.div`
+export const List = styled.div`
 margin: auto;
 padding: 50px 20px;
 width: 400px;
@@ -27,4 +27,63 @@ padding: 5px;
 margin: 5px;
 border-radius: 4px;
 `
-export default CharList;
+
+export const LocCard = styled.div`
+border: 1px solid #c1c1c1;
+border-radius: 4px;
+background-color: white;
+padding: 2px;
+margin: 2px;
+
+a{
+    color: black;
+    font-weight: lighter;
+    font-size: small;
+    text-decoration: none;
+}
+`
+
+export const LocList = styled.div`
+margin: auto;
+padding: 50px 20px;
+max-width: 900px;
+`
+
+export const LocListCont = styled.div`
+display: flex;
+flexFlow: row wrap;
+justify-content: center;
+`
+export const LocCharCont = styled.div`
+margin: 5px 0;
+
+a{
+    color: black;
+    text-decoration: none;
+    font-weight: light;
+    text-align: left;
+
+    :hover {
+        text-decoration: underline;
+    }
+}
+
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export default List;
