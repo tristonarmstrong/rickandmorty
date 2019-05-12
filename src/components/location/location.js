@@ -19,13 +19,15 @@ class Location extends React.Component{
     }
 
     render(){
-        console.log(this.state.loc)
         if(!this.state.loc){
             return "Loading..."
         }
+        const {name, dimension, type} = this.state.loc
         return(
             <div>
-                <h1>{this.state.loc.name}</h1>
+                <h1>{name}</h1>
+                <p>{dimension}</p>
+                <p>{type}</p>
             </div>
         )
     }
