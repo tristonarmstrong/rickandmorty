@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import {CharList, Card } from '../styledComponents/styledComponents';
+import {List, Card } from '../styledComponents/styledComponents';
 
 class Character extends React.Component {
 
@@ -22,7 +22,7 @@ class Character extends React.Component {
         }
         const { image, name, id, status, species, type, gender, created, origin, episode, location } = this.state.char
         return (
-            <CharList>
+            <List>
                 <Card>
                     <img src={image} />
                     <h1>{name}</h1>
@@ -35,7 +35,7 @@ class Character extends React.Component {
                     {/* <p>{episode}</p> */}
                     {/* <p>{location}</p> */}
                 </Card>
-            </CharList>
+            </List>
 
         )
     }

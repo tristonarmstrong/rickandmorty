@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import CharacterCard from './characterCard';
-import { CharList, PageBtn } from '../styledComponents/styledComponents';
+import { List, PageBtn } from '../styledComponents/styledComponents';
 
 
 class CharacterList extends React.Component {
@@ -29,7 +29,7 @@ class CharacterList extends React.Component {
             return "Loading..."
         }
         return (
-            <CharList>
+            <List>
                 <PageBtn>
                     <button onClick={e => this.reRender(e, this.state.info.prev)} >Previous Page</button>
                     <button onClick={e => this.reRender(e, this.state.info.next)} >Next Page</button>
@@ -38,7 +38,7 @@ class CharacterList extends React.Component {
                 {this.state.characters.map(char => {
                     return <CharacterCard key={char.id} character={char} />
                 })}
-            </CharList>
+            </List>
         )
     }
 }

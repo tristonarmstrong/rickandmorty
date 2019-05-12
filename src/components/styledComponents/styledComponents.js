@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const CharList = styled.div`
+export const List = styled.div`
 margin: auto;
 padding: 50px 20px;
 width: 400px;
@@ -27,4 +27,4 @@ padding: 5px;
 margin: 5px;
 border-radius: 4px;
 `
-export default CharList;
+export default List;
